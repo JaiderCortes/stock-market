@@ -1,0 +1,11 @@
+<div class="stock-container">
+  <div class="stock-name"><h3>{{stock.name + ' (' + stock.code + ')'}}</h3></div>
+  <div class="stock-price" [class] = "stock.isPosChange() ? 'positive' : 'negative'">
+    $ {{stock.price}}
+  </div>
+  <div id="btns">
+    <input type="button" value="Buy" class="btnBuy">
+    <input type="button" value="Favorite" class="btnFav"
+            (click)="toggleFavorite()" [disabled]="stock.favorite">
+  </div>
+</div>
